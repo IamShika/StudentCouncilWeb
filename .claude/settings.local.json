@@ -7,7 +7,12 @@
       "Bash(curl:*)",
       "Bash(npm run build:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(gh auth status:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Student Council TK campaign website\n\n- Hero section with animated particles and decorations\n- About section with team introduction\n- Team section featuring all 11 council members\n- Policies section with 3 main campaign policies\n- Poster section with campaign poster\n- Contact section with social media links\n- Framer Motion animations throughout\n- Responsive design with Tailwind CSS\n- GitHub Pages deployment workflow included\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git remote set-url:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

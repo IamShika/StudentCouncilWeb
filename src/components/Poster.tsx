@@ -50,7 +50,7 @@ export default function Poster() {
               className="block relative aspect-[3/4] w-full bg-gray-100 rounded overflow-hidden hover:scale-[1.02] transition-transform cursor-pointer"
             >
               <Image
-                src="/images/Poster/posterwewaretk.png"
+                src="/images/poster/posterwewaretk.png"
                 alt="Because We Are TK - Poster"
                 fill
                 className="object-contain"
