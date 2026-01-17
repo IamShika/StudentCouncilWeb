@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Comic+Neue:wght@400;700&family=Permanent+Marker&family=Prompt:wght@300;400;500;600;700&family=Mitr:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pastel-pink: #ffc0cb;
+  --pastel-blue: #a8d8ea;
+  --pastel-yellow: #fff3b0;
+  --pastel-purple: #e6b0ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Prompt', 'Mitr', sans-serif;
+  background: linear-gradient(135deg, #ffe4e8 0%, #d4f1f9 50%, #ffe4e8 100%);
+  min-height: 100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection on specific elements if needed */
+.selectable {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Scrapbook decorative elements */
+.tape {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: linear-gradient(180deg, rgba(255,255,200,0.9) 0%, rgba(255,255,180,0.7) 100%);
+  transform: rotate(-5deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.tape::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+}
+
+.polaroid {
+  background: white;
+  padding: 10px 10px 40px 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.torn-paper {
+  position: relative;
+  background: #fffef5;
+  padding: 20px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.torn-paper::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(135deg, transparent 33.33%, #fffef5 33.33%, #fffef5 66.66%, transparent 66.66%),
+              linear-gradient(-135deg, transparent 33.33%, #fffef5 33.33%, #fffef5 66.66%, transparent 66.66%);
+  background-size: 20px 20px;
+}
+
+.binder-clip {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(180deg, #666 0%, #444 100%);
+  border-radius: 4px 4px 0 0;
+  z-index: 10;
+}
+
+.binder-clip::before,
+.binder-clip::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 15px;
+  height: 25px;
+  border: 3px solid #666;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.binder-clip::before {
+  left: -10px;
+  transform: rotate(-15deg);
+}
+
+.binder-clip::after {
+  right: -10px;
+  transform: rotate(15deg);
+}
+
+/* Star pattern background */
+.stars-bg {
+  background-image: radial-gradient(circle, #ffb6c1 2px, transparent 2px);
+  background-size: 30px 30px;
+}
+
+/* Film strip decoration */
+.film-strip {
+  background: #222;
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.film-strip::before,
+.film-strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15px;
+  background: repeating-linear-gradient(
+    0deg,
+    #222 0px,
+    #222 5px,
+    #fff 5px,
+    #fff 10px
+  );
+}
+
+.film-strip::before { left: 0; }
+.film-strip::after { right: 0; }
+
+/* Rainbow text animation - slowed down */
+.rainbow-text {
+  background: linear-gradient(to right, #2b8eff 0%,#2cbce0 19%,#84ff2b 40%,#ffb300 60%,#e02cbf 83%,#2b8eff 100%); 
+  background-size: 10000px 100%;
+  animation: bg 12s linear infinite ;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow 10s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Sticker effect */
+.sticker {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: rotate(-3deg);
+}
+
+/* CD/DVD decoration */
+.cd-disc {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+    #e0e0e0 0%,
+    #a0a0ff 25%,
+    #e0e0e0 50%,
+    #ffa0ff 75%,
+    #e0e0e0 100%
+  );
+  position: relative;
+}
+
+.cd-disc::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ccc;
+}
+
+/* Camera frame */
+.camera-frame {
+  background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+  border-radius: 15px;
+  padding: 15px;
+  position: relative;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.5),
+    0 4px 8px rgba(0,0,0,0.1);
+}
+
+.camera-lens {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #333 40%, #666 60%, #999 80%);
+  border: 3px solid #888;
+}
+
+/* Hover animations */
+.hover-float {
+  transition: transform 0.3s ease;
+}
+
+.hover-float:hover {
+  transform: translateY(-5px) rotate(2deg);
+}
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-pop-in {
+  animation: popIn 0.5s ease forwards;
+}
