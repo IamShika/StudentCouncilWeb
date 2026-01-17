@@ -1,4 +1,6 @@
+// Base path is determined at build time
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/StudentCouncilWeb' : '';
+
 export function getImagePath(path: string): string {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  return `${basePath}${path}`;
+  return `${BASE_PATH}${path}`;
 }
