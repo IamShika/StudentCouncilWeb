@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Particles from './Particles';
+import { getImagePath } from '@/lib/utils';
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
       >
         <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shadow-lg border-4 border-white">
           <Image
-            src="/images/wearetkicon.jpg"
+            src={getImagePath("/images/wearetkicon.jpg")}
             alt="Because We Are TK"
             width={80}
             height={80}

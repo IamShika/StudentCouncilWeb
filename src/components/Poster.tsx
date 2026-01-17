@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 import Particles from './Particles';
+import { getImagePath } from '@/lib/utils';
 
 export default function Poster() {
   const ref = useRef(null);
@@ -50,7 +51,7 @@ export default function Poster() {
               className="block relative aspect-[3/4] w-full bg-gray-100 rounded overflow-hidden hover:scale-[1.02] transition-transform cursor-pointer"
             >
               <Image
-                src="/images/poster/posterwewaretk.png"
+                src={getImagePath("/images/poster/posterwewaretk.png")}
                 alt="Because We Are TK - Poster"
                 fill
                 className="object-contain"

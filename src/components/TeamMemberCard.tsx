@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { TeamMember } from '@/data/members';
+import { getImagePath } from '@/lib/utils';
 
 interface Props {
   member: TeamMember;
@@ -52,7 +53,7 @@ export default function TeamMemberCard({ member, index }: Props) {
                 {/* Background layer */}
                 {member.background && (
                   <Image
-                    src={member.background}
+                    src={getImagePath(member.background)}
                     alt=""
                     fill
                     className="object-cover opacity-30 blur-sm"
@@ -60,7 +61,7 @@ export default function TeamMemberCard({ member, index }: Props) {
                 )}
                 {/* Portrait layer */}
                 <Image
-                  src={member.portrait}
+                  src={getImagePath(member.portrait)}
                   alt={member.name}
                   fill
                   className="object-cover relative z-10"
